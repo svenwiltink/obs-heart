@@ -150,6 +150,7 @@ void setup() {
 
 void loop() {
 
+  Serial.println("i: running loop");
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are 
   // connected we set the connected flag to be true.
@@ -163,7 +164,7 @@ void loop() {
   }
 
   if(!connected && doScan){
-    BLEDevice::getScan()->start(0);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
+    BLEDevice::getScan()->start(5, false);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }
   
   delay(1000);
